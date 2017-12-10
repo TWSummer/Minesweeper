@@ -11,8 +11,16 @@ class Board
 
   def reveal(pos)
     tile = @board[pos[0]][pos[1]]
+    result = tile.value
+    return result if tile.revealed
     tile.reveal
-    tile.value
+    if result == 0
+      reveal_these = adjacent_cells(pos[0], pos[1]).reject do |pos|
+        @board[pos[0]][pos[1]].revealed
+      end
+      reveal_these.each { |pos| reveal(pos) }
+    end
+    result
   end
 
   def flag(pos)
