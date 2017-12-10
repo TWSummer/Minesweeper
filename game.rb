@@ -6,14 +6,17 @@ class Game
     @board = Board.new(size, mines)
     @size = size
     @mines = mines
+    @remaining_tiles = size**2 - mines
     @game_over = false
   end
 
   def play
     until @game_over
       @board.display
-      @board.reveal(get_input)
-      # @game_over = true
+      input = get_input
+      revealed = @board.reveal(input)
+      @remaining_tiles -= 1
+      check_end_conditions(revealed)
     end
   end
 
@@ -39,6 +42,23 @@ private
 
   def parse_input(str)
     str.split(",").map { |num| num.to_i - 1 }
+  end
+
+  def check_end_conditions(value)
+    @game_over = true if value == "*"
+    lose if @game_over
+    win if @remaining_tiles == 0 && !@game_over
+  end
+
+  def win
+    @board.display
+    puts "Congratulations, you win!"
+    @game_over = true
+  end
+
+  def lose
+    @board.display
+    puts "Oh no! You set off a bomb. You are now dead."
   end
 end
 
