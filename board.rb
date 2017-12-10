@@ -15,6 +15,17 @@ class Board
     tile.value
   end
 
+  def display
+    print "  #{(0...@size).to_a.join(' ')}\n"
+    @board.each_with_index do |row, row_i|
+      print "#{row_i} "
+      row.each do |tile|
+        print "#{tile.to_s} "
+      end
+      puts
+    end
+  end
+
   private
 
   def scatter_mines(size, mines)
@@ -33,7 +44,7 @@ class Board
 
   def fill_non_mines
     @board.each_with_index do |row, row_i|
-      row.each_with_index do |val, col_i|
+      row.each_index do |col_i|
         @board[row_i][col_i] ||= Tile.new(count_adjacent_bombs(row_i, col_i))
       end
     end
