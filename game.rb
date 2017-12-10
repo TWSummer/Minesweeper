@@ -12,8 +12,8 @@ class Game
   def play
     until @game_over
       @board.display
-      get_input
-      @game_over = true
+      @board.reveal(get_input)
+      # @game_over = true
     end
   end
 
@@ -26,7 +26,7 @@ private
       puts "I'm sorry. That input is not valid. Please try again."
       result = gets.chomp
     end
-    result
+    parse_input(result)
   end
 
   def valid_input(str)
@@ -35,6 +35,10 @@ private
     pos.map!(&:to_i)
     return false unless pos.all? { |num| num > 0 && num <= @size }
     true
+  end
+
+  def parse_input(str)
+    str.split(",").map { |num| num.to_i - 1 }
   end
 end
 
