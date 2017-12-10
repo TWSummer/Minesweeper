@@ -12,13 +12,13 @@ class Tile
   end
 
   def flag
-    @flagged = true
+    @flagged = !@flagged
   end
 
   def to_s
-    return "*" unless revealed
+    return "F" if @flagged && !@revealed
+    return "*" unless @revealed
     return "M" if @value == "*"
-    return "F" if @flagged
     return "_" if @value == 0
     @value.to_s
   end

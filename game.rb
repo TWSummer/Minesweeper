@@ -13,17 +13,14 @@ class Game
   def play
     until @game_over
       @board.display
-      input = get_input
-      revealed = @board.reveal(input)
-      @remaining_tiles -= 1
-      check_end_conditions(revealed)
+      act_on_input(get_input)
     end
   end
 
 private
 
   def get_input
-    puts "Enter a cell to reveal in row,column format. ex: \"3,4\""
+    puts "Enter a move ex: \"r34\" to reveal row 3, colum 4. \"f34\" to flag that cell"
     result = gets.chomp
     until valid_input(result)
       puts "I'm sorry. That input is not valid. Please try again."
@@ -33,7 +30,9 @@ private
   end
 
   def valid_input(str)
-    pos = str.split(",")
+    return false unless str.length == 3
+    return false unless str[0] == "r" || str[0] == "f"
+    pos = str[1..-1].split("")
     return false unless pos.length == 2
     pos.map!(&:to_i)
     return false unless pos.all? { |num| num > 0 && num <= @size }
@@ -41,7 +40,18 @@ private
   end
 
   def parse_input(str)
-    str.split(",").map { |num| num.to_i - 1 }
+    [str[0]].concat(str[1..-1].split("").map { |num| num.to_i - 1 })
+  end
+
+  def act_on_input(input)
+    command = input[0]
+    if command == "r"
+      revealed = @board.reveal(input.drop(1))
+      @remaining_tiles -= 1
+      check_end_conditions(revealed)
+    elsif command == "f"
+      @board.flag(input.drop(1))
+    end
   end
 
   def check_end_conditions(value)

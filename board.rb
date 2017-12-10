@@ -15,6 +15,10 @@ class Board
     tile.value
   end
 
+  def flag(pos)
+    @board[pos[0]][pos[1]].flag
+  end
+
   def display
     print "  #{(1..@size).to_a.join(' ')}\n"
     @board.each_with_index do |row, row_i|
