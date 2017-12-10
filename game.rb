@@ -6,6 +6,7 @@ class Game
     @board = Board.new(size, mines)
     @size = size
     @mines = mines
+    @mines_remaining = mines
     @remaining_tiles = size**2 - mines
     @game_over = false
   end
@@ -20,6 +21,7 @@ class Game
 private
 
   def get_input
+    puts "There are #{@mines_remaining} mines remaining."
     puts "Enter a move ex: \"r34\" to reveal row 3, colum 4. \"f34\" to flag that cell"
     result = gets.chomp
     until valid_input(result)
@@ -50,7 +52,7 @@ private
       @remaining_tiles -= 1
       check_end_conditions(revealed)
     elsif command == "f"
-      @board.flag(input.drop(1))
+      @mines_remaining += @board.flag(input.drop(1))
     end
   end
 
