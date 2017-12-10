@@ -16,9 +16,9 @@ class Board
   end
 
   def display
-    print "  #{(0...@size).to_a.join(' ')}\n"
+    print "  #{(1..@size).to_a.join(' ')}\n"
     @board.each_with_index do |row, row_i|
-      print "#{row_i} "
+      print "#{row_i + 1} "
       row.each do |tile|
         print "#{tile.to_s} "
       end
