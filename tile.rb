@@ -5,5 +5,9 @@ class Tile
     @value = value
     @revealed = false
   end
-  
+
+  def reveal
+    @revealed = true
+  end
+
 end
