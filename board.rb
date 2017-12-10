@@ -36,6 +36,14 @@ class Board
       end
       puts
     end
+
+    def won
+      @board.all? do |row|
+        row.all? do |tile|
+          tile.revealed || tile.value == "*"
+        end
+      end
+    end
   end
 
   private

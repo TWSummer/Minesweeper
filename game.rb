@@ -2,12 +2,11 @@ require_relative 'board.rb'
 
 class Game
 
-  def initialize(size = 9, mines = 20)
+  def initialize(size = 9, mines = 5)
     @board = Board.new(size, mines)
     @size = size
     @mines = mines
     @mines_remaining = mines
-    @remaining_tiles = size**2 - mines
     @game_over = false
   end
 
@@ -49,7 +48,6 @@ private
     command = input[0]
     if command == "r"
       revealed = @board.reveal(input.drop(1))
-      @remaining_tiles -= 1
       check_end_conditions(revealed)
     elsif command == "f"
       @mines_remaining += @board.flag(input.drop(1))
@@ -59,7 +57,7 @@ private
   def check_end_conditions(value)
     @game_over = true if value == "*"
     lose if @game_over
-    win if @remaining_tiles == 0 && !@game_over
+    win if @board.won && !@game_over
   end
 
   def win
