@@ -18,6 +18,15 @@ class Game
     end
   end
 
+  def self.start_game
+    puts "Welcome to Minesweeper"
+    puts "Type \"load save_name\" to load a game or hit enter to start a new game."
+    response = gets.chomp
+    return Game.new if response.length <= 5
+    return Game.load(response[5..-1].downcase) if response[0..4].downcase == "load "
+    Game.new
+  end
+
   def self.load(name)
     YAML::load(File.read("#{name}.yml"))
   end
@@ -84,7 +93,7 @@ class Game
   end
 
   def save(name)
-    File.open("#{name}.yml", "w") do |f|
+    File.open("#{name.downcase}.yml", "w") do |f|
       f.print self.to_yaml
     end
   end
@@ -94,6 +103,5 @@ class Game
 end
 
 if $PROGRAM_NAME == __FILE__
-  Game.load("test").play
-  # Game.new().play
+  Game.start_game.play
 end
