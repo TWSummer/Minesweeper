@@ -19,15 +19,15 @@ board: !ruby/object:Board
       revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: 0
+      value: 1
       revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: 0
+      value: 1
       revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: 0
+      value: 1
       revealed: true
       flagged: false
     - !ruby/object:Tile
@@ -44,82 +44,6 @@ board: !ruby/object:Board
       flagged: false
     - !ruby/object:Tile
       value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-  - - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-  - - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
       revealed: true
       flagged: false
     - !ruby/object:Tile
@@ -137,6 +61,42 @@ board: !ruby/object:Board
     - !ruby/object:Tile
       value: "*"
       revealed: false
+      flagged: true
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+  - - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
       flagged: false
     - !ruby/object:Tile
       value: 1
@@ -146,8 +106,52 @@ board: !ruby/object:Board
       value: 0
       revealed: true
       flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
   - - !ruby/object:Tile
       value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 2
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 2
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+  - - !ruby/object:Tile
+      value: 1
+      revealed: false
+      flagged: false
+    - !ruby/object:Tile
+      value: "*"
       revealed: false
       flagged: false
     - !ruby/object:Tile
@@ -163,6 +167,22 @@ board: !ruby/object:Board
       revealed: true
       flagged: false
     - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+  - - !ruby/object:Tile
       value: 1
       revealed: true
       flagged: false
@@ -182,8 +202,24 @@ board: !ruby/object:Board
       value: 0
       revealed: true
       flagged: false
+    - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
   - - !ruby/object:Tile
-      value: 1
+      value: 0
       revealed: true
       flagged: false
     - !ruby/object:Tile
@@ -192,6 +228,14 @@ board: !ruby/object:Board
       flagged: false
     - !ruby/object:Tile
       value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
       revealed: true
       flagged: false
     - !ruby/object:Tile
@@ -205,17 +249,9 @@ board: !ruby/object:Board
     - !ruby/object:Tile
       value: "*"
       revealed: false
-      flagged: false
+      flagged: true
     - !ruby/object:Tile
       value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
       revealed: true
       flagged: false
   - - !ruby/object:Tile
@@ -223,91 +259,55 @@ board: !ruby/object:Board
       revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
       value: 1
       revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-  - - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 2
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 1
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-    - !ruby/object:Tile
-      value: 0
-      revealed: true
-      flagged: false
-  - - !ruby/object:Tile
-      value: 1
-      revealed: false
       flagged: false
     - !ruby/object:Tile
       value: "*"
       revealed: false
+      flagged: true
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: 2
-      revealed: false
+      value: 0
+      revealed: true
       flagged: false
     - !ruby/object:Tile
-      value: "*"
-      revealed: false
+      value: 0
+      revealed: true
       flagged: false
     - !ruby/object:Tile
       value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+  - - !ruby/object:Tile
+      value: 0
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 1
+      revealed: true
+      flagged: false
+    - !ruby/object:Tile
+      value: 0
       revealed: true
       flagged: false
     - !ruby/object:Tile
@@ -328,5 +328,6 @@ board: !ruby/object:Board
       flagged: false
 size: 9
 mines: 5
-mines_remaining: 4
+mines_remaining: 1
 game_over: false
+start_time: 2017-12-10 20:51:50.349376072 -08:00
