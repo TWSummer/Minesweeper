@@ -13,6 +13,7 @@ class Game
 
   def play
     until @game_over
+      system("clear")
       @board.display
       act_on_input(get_input)
     end
@@ -35,13 +36,20 @@ class Game
 
   def get_input
     puts "There are #{@mines_remaining} mines remaining."
-    puts "Enter a move ex: \"r34\" to reveal row 3, colum 4. \"f34\" to flag that cell"
+    list_commands
+    puts "Enter move:"
     result = gets.chomp
     until valid_input(result)
       puts "I'm sorry. That input is not valid. Please try again."
       result = gets.chomp
     end
     parse_input(result)
+  end
+
+  def list_commands
+    puts "r\#\# to reveal a cell. ex: r34 will reveal row 3, column 4"
+    puts "f\#\# to flag or unflag a cell. ex: f34 will flag row 3, column 4"
+    puts "s file_name to save your game with the name \"file_name\""
   end
 
   def valid_input(str)
@@ -82,12 +90,14 @@ class Game
   end
 
   def win
+    system("clear")
     @board.display
     puts "Congratulations, you win!"
     @game_over = true
   end
 
   def lose
+    system("clear")
     @board.display
     puts "Oh no! You set off a bomb. You are now dead."
   end
