@@ -1,4 +1,5 @@
 require_relative 'board.rb'
+require 'yaml'
 
 class Game
 
@@ -17,7 +18,11 @@ class Game
     end
   end
 
-private
+  def self.load(name)
+    YAML::load(File.read("#{name}.yml"))
+  end
+
+  private
 
   def get_input
     puts "There are #{@mines_remaining} mines remaining."
@@ -31,6 +36,7 @@ private
   end
 
   def valid_input(str)
+    return true if str.length > 2 && str[0] == "s" && str[1] == " "
     return false unless str.length == 3
     return false unless str[0] == "r" || str[0] == "f"
     pos = str[1..-1].split("")
@@ -41,7 +47,11 @@ private
   end
 
   def parse_input(str)
-    [str[0]].concat(str[1..-1].split("").map { |num| num.to_i - 1 })
+    if str[0] == "r" || str[0] == "f"
+      [str[0]].concat(str[1..-1].split("").map { |num| num.to_i - 1 })
+    else
+      [str[0],str[2..-1]]
+    end
   end
 
   def act_on_input(input)
@@ -51,6 +61,8 @@ private
       check_end_conditions(revealed)
     elsif command == "f"
       @mines_remaining += @board.flag(input.drop(1))
+    elsif command == "s"
+      save(input[1])
     end
   end
 
@@ -70,8 +82,18 @@ private
     @board.display
     puts "Oh no! You set off a bomb. You are now dead."
   end
+
+  def save(name)
+    File.open("#{name}.yml", "w") do |f|
+      f.print self.to_yaml
+    end
+  end
+
+
+
 end
 
 if $PROGRAM_NAME == __FILE__
-  Game.new().play
+  Game.load("test").play
+  # Game.new().play
 end
