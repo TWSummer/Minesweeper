@@ -10,12 +10,12 @@ class Game
     @mines = mines
     @mines_remaining = mines
     @game_over = false
+    @start_time = Time.now
   end
 
   def play
     until @game_over
-      system("clear")
-      @board.display
+      show_screen
       act_on_input(get_input)
     end
   end
@@ -35,9 +35,26 @@ class Game
 
   private
 
-  def get_input
-    puts "There are #{@mines_remaining} mines remaining."
+  def show_screen
+    system("clear")
+    @board.display
+    show_mines
+    show_time
     list_commands
+  end
+
+  def show_mines
+    print "There are "
+    print "#{@mines_remaining} ".colorize(:light_blue)
+    puts "mines remaining."
+  end
+
+  def show_time
+    print "#{(Time.now - @start_time).to_i} ".colorize(:light_blue)
+    puts "seconds have elapsed"
+  end
+
+  def get_input
     puts "Enter move:"
     result = gets.chomp
     until valid_input(result)
@@ -93,7 +110,7 @@ class Game
   def win
     system("clear")
     @board.display
-    puts "Congratulations, you win!"
+    puts "Congratulations, you won in #{(Time.now - @start_time).round(3)} seconds!"
     @game_over = true
   end
 
