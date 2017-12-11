@@ -1,5 +1,6 @@
 require_relative 'board.rb'
 require 'yaml'
+require 'colorize'
 
 class Game
 
@@ -47,9 +48,9 @@ class Game
   end
 
   def list_commands
-    puts "r\#\# to reveal a cell. ex: r34 will reveal row 3, column 4"
-    puts "f\#\# to flag or unflag a cell. ex: f34 will flag row 3, column 4"
-    puts "s file_name to save your game with the name \"file_name\""
+    puts "r\#\# to reveal a cell. ex: r34 will reveal row 3, column 4".colorize(:red)
+    puts "f\#\# to flag or unflag a cell. ex: f34 will flag row 3, column 4".colorize(:red)
+    puts "s file_name to save your game with the name \"file_name\"".colorize(:red)
   end
 
   def valid_input(str)
